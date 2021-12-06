@@ -6,31 +6,17 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ComparisonTest {
+    // UC1-To Validate given three integer value gives maximum return true
     @Test
-    public void givenInteger_ShouldReturnsLargest(){
+    public void givenInteger_ShouldReturnsLargest() {
         Comparison comparison = new Comparison();
-        int max = comparison.largest(41,56,23);
-        Assertions.assertEquals(56,max);
+        int max = comparison.largest(41, 56, 23);
+        Assertions.assertEquals(56, max);
     }
+    // UC2-To Validate given three float value gives maximum return true
     @Test
-    //TC1.1 Ensure the test data has Max Number in the First position
-    public void givenInteger_AndFirstNumberIsMax_ShouldReturn_true() {
+    public void givenFloat_ShouldReturnsLargest() {
         Comparison comparison = new Comparison();
-        int max =  comparison.largest(555, 104, 180);
-        Assertions.assertEquals(555, max);
-    }
-    @Test
-    //TC1.2 Ensure the test data has Max Number in the Second position
-    public void givenInteger_AndSecondNumberIsMax_ShouldReturn_true() {
-        Comparison comparison = new Comparison();
-        int max = comparison.largest(55, 704, 180);
-        Assertions.assertEquals(704, max);
-    }
-    @Test
-    //TC1.3 Ensure the test data has Max Number in the Third position
-    public void givenInteger_AndThirdNumberIsMax_ShouldReturn_true() {
-        Comparison comparison = new Comparison();
-        int max = comparison.largest(55, 74, 180);
-        Assertions.assertEquals(180, max);
+        float max = comparison.largest(4.1f, 5.6f, 2.3f);
     }
 }
