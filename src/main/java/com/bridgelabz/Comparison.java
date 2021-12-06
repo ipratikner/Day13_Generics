@@ -1,84 +1,25 @@
 package com.bridgelabz;
 
-public class Comparison <T extends Comparable<T>> {
-    T x,y,z;
-
-    public Comparison(T x, T y, T z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
-
-    public Comparison() {
-    }
-
-    //To find largest number among three Integer
-    public static Integer largest(Integer x, Integer y, Integer z){
-        Integer max = x;
-        if (y.compareTo(max) > 0)
-            max = y;
-        if (z.compareTo(max) > 0)
-            max = z;
-        return max;
-    }
-    //To find largest number among three Float
-    public static Float largest(Float x, Float y, Float z){
-        Float max = x;
-        if (y.compareTo(max) > 0)
-            max = y;
-        if (z.compareTo(max) > 0)
-            max = z;
-        return max;
-    }
-    //To find largest number among three Float
-    public static String largest(String x, String y, String z){
-        String max = x;
-        if (y.compareTo(max) > 0)
-            max = y;
-        if (z.compareTo(max) > 0)
-            max = z;
-        return max;
-    }
-    //Refactor 2 :Ensure the Generic Type extends Comparable
-    // generic method to determine the greatest of comparable objects.
-    public static <T extends Comparable<T>> T largest(T x, T y, T z) {
-        T max = x;//initially assume x is the largest element
-        if(y.compareTo(max) > 0) {
-            max = y;//here max is y
+public class Comparison {
+    public static <T extends Comparable> T largest(T[] elements) {
+        T max = elements[0];
+        for (T i : elements) {
+            // Comparing elements and print which one is maximum.
+            if (i.compareTo(max) > 0)
+                max = i;
         }
-        if(z.compareTo(max) > 0) {
-            max = z;//here max is z now
-        }
+        //Message or maximum array value and print value
+        System.out.println("maximum array value " + max);
         return max;
     }
-    public T largest(){
-        return Comparison.largest(x,y,z);
-    }
 
+
+    //
     //main method
     public static void main(String[] args) {
         System.out.println("Welcome To The Geniric Problems");
-        //compaaring maximum value Integer
-        Integer xInt = 20;
-        Integer yInt = 451;
-        Integer zInt = 68;
-        Integer max = new Comparison().largest(xInt,yInt,zInt);
-        System.out.println("The Largest Interger is ==> "+max);
-
-        //compaaring maximum value Float
-        Float xFloat = 2.0f;
-        Float yFloat = 4.5f;
-        Float zFloat = 6.8f;
-        Float max1 = new Comparison().largest(xFloat,yFloat,zFloat);
-        System.out.println("The Largest Float is ==> "+max1);
-
-        //compaaring maximum value String
-        String xString = "Apple";
-        String yString = "Peach";
-        String zString = "Banana";
-        String max2 = new Comparison().largest(xString,yString,zString);
-        System.out.println("The Largest Float is ==> "+max2);
-
-        System.out.println(max);
+        //Find Maximum Integer Element From array
+        Integer[] integers = {20, 25, 45, 78, 65, 103};
+        System.out.println(integers);
     }
 }
