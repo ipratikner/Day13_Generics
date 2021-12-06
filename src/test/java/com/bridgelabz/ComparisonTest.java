@@ -19,4 +19,11 @@ class ComparisonTest {
         Comparison comparison = new Comparison();
         float max = comparison.largest(4.1f, 5.6f, 2.3f);
     }
+    // UC3-To Validate given three String value gives maximum return true
+    @Test
+    public void givenString_ShouldReturnsLargest() {
+        Comparison comparison = new Comparison();
+        String max = comparison.largest("Ashish", "Rathod","Aarti");
+        Assertions.assertEquals("Rathod",max);
+    }
 }

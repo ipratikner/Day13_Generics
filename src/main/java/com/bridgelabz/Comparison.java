@@ -22,6 +22,15 @@ public class Comparison {
             max = z;
         return max;
     }
+    //To find largest number among three Float
+    public static String largest(String x, String y, String z){
+        String max = x;
+        if (y.compareTo(max) > 0)
+            max = y;
+        if (z.compareTo(max) > 0)
+            max = z;
+        return max;
+    }
     //main method
     public static void main(String[] args) {
         System.out.println("Welcome To The Geniric Problems");
@@ -34,10 +43,16 @@ public class Comparison {
 
         //compaaring maximum value Float
         Float xFloat = 2.0f;
-        Float yFloat = 4.51f;
+        Float yFloat = 4.5f;
         Float zFloat = 6.8f;
         Float max1 = new Comparison().largest(xFloat,yFloat,zFloat);
         System.out.println("The Largest Float is ==> "+max);
-    }
 
+        //compaaring maximum value String
+        String xString = "Ashish";
+        String yString = "Rathod";
+        String zString = "Aarti";
+        String max2 = new Comparison().largest(xString,yString,zString);
+        System.out.println("The Largest Float is ==> "+max);
+    }
 }
