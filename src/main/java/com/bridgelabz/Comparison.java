@@ -1,9 +1,17 @@
 package com.bridgelabz;
 
-public class Comparison {
-    public Comparison() {
+public class Comparison <T extends Comparable<T>> {
+    T x,y,z;
 
+    public Comparison(T x, T y, T z) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
+
+    public Comparison() {
+    }
+
     //To find largest number among three Integer
     public static Integer largest(Integer x, Integer y, Integer z){
         Integer max = x;
@@ -31,8 +39,9 @@ public class Comparison {
             max = z;
         return max;
     }
-    //Refactor 1 :Ensure the Generic Type extends Comparable
-    public static <T extends Comparable<T>> T maximum(T x, T y, T z){
+    //Refactor 2 :Ensure the Generic Type extends Comparable
+    // generic method to determine the greatest of comparable objects.
+    public static <T extends Comparable<T>> T largest(T x, T y, T z) {
         T max = x;//initially assume x is the largest element
         if(y.compareTo(max) > 0) {
             max = y;//here max is y
@@ -41,6 +50,9 @@ public class Comparison {
             max = z;//here max is z now
         }
         return max;
+    }
+    public T largest(){
+        return Comparison.largest(x,y,z);
     }
 
     //main method
