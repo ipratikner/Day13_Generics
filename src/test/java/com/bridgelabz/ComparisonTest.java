@@ -19,4 +19,11 @@ class ComparisonTest {
         int max =  comparison.largest(555, 104, 180);
         Assertions.assertEquals(555, max);
     }
+    @Test
+    //TC1.2 Ensure the test data has Max Number in the Second position
+    public void givenInteger_AndSecondNumberIsMax_ShouldReturn_true() {
+        Comparison comparison = new Comparison();
+        int max = comparison.largest(55, 704, 180);
+        Assertions.assertEquals(704, max);
+    }
 }
