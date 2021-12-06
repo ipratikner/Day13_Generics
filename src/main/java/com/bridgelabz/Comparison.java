@@ -15,11 +15,10 @@ public class Comparison {
     }
     //main method
     public static void main(String[] args) {
-        System.out.println("Welcome To The Genirics Program");
+        System.out.println("Welcome To The Geniric Problems");
         Integer xInt = 20;
         Integer yInt = 451;
         Integer zInt = 68;
-
         //compaaring maximum value
         Integer max = new Comparison().largest(xInt,yInt,zInt);
         System.out.println("The Largest Interger is ==> "+max);
