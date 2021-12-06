@@ -6,24 +6,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ComparisonTest {
-    // UC1-To Validate given three integer value gives maximum return true
+    // Refactor 1:Refactor all the 3 to One Generic Method and find the maximum
     @Test
-    public void givenInteger_ShouldReturnsLargest() {
+    public void givenObjectGenericMethod_ShouldReturnsLargest() {
         Comparison comparison = new Comparison();
-        int max = comparison.largest(41, 56, 23);
-        Assertions.assertEquals(56, max);
-    }
-    // UC2-To Validate given three float value gives maximum return true
-    @Test
-    public void givenFloat_ShouldReturnsLargest() {
-        Comparison comparison = new Comparison();
-        float max = comparison.largest(4.1f, 5.6f, 2.3f);
-    }
-    // UC3-To Validate given three String value gives maximum return true
-    @Test
-    public void givenString_ShouldReturnsLargest() {
-        Comparison comparison = new Comparison();
-        String max = comparison.largest("Ashish", "Rathod","Aarti");
-        Assertions.assertEquals("Rathod",max);
+        String max = comparison.largest("Apple", "Peach","Banana");
+        Assertions.assertEquals("Peach",max);
     }
 }
