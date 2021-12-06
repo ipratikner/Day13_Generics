@@ -26,4 +26,11 @@ class ComparisonTest {
         int max = comparison.largest(55, 704, 180);
         Assertions.assertEquals(704, max);
     }
+    @Test
+    //TC1.3 Ensure the test data has Max Number in the Third position
+    public void givenInteger_AndThirdNumberIsMax_ShouldReturn_true() {
+        Comparison comparison = new Comparison();
+        int max = comparison.largest(55, 74, 180);
+        Assertions.assertEquals(180, max);
+    }
 }
